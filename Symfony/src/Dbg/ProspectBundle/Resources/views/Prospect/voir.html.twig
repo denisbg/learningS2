@@ -1,0 +1,42 @@
+{% extends "DbgProspectBundle::layout.html.twig" %}
+
+ 
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+ 
+{% block devskills_body %}</pre>
+
+{%  if article.image is not null %}
+<img src="{{ article.image.url }}" alt="{{article.image.alt}}" />
+{% endif %}
+<h2>{{ article.titre }}</h2>
+<i> Par {{article.auteur }} </i>
+<div class = "well"> 
+  {{ article.contenu }}
+  {% for commentaire in  liste_commentaires %}
+  
+  <div class="bg-info">
+  <i> Par {{commentaire.auteur}}</i><br>
+  {{ commentaire.contenu}}
+  </div>
+  
+  {% endfor %}
+</div>
+
+{% if article.categories.count > 0  %}
+- Categories :
+    {% for categorie  in article.categories %}
+        {{ categorie.nom }}{% if not loop.last %}  - {% endif %}
+    {% endfor %}
+{% endif %}
+
+<p>
+  <a href="{{ path('dbgprospect_accueil') }}" class = "btn"> <i class="icon-chevron-left"></i>
+  Retour la liste </a>
+  <a href="{{ path('dbgprospect_modifier', {'id':article.id}) }}" class = "btn"> <i class="icon-edit"></i>
+  Modifier l'article </a>
+  <a href="{{ path('dbgprospect_supprimer', {'id':article.id}) }}" class = "btn"> <i class="icon-trash"></i>
+  supprimer l'article </a>
+</p>
+{% endblock %}

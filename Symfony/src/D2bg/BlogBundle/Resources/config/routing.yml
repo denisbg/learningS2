@@ -1,0 +1,34 @@
+d2bgblog_accueil:
+    pattern:    /{page}
+    defaults:    { _controller: D2bgBlogBundle:Blog:index, page: 1 }
+    requirements:
+       page: \d*
+       
+d2bgblog_init:
+    pattern: /initdb
+    defaults:    {_controller: D2bgBlogBundle:Blog:initdb }
+
+d2bgblog_voir:
+    pattern:    /article/{id}.{format}
+    defaults:    { _controller: D2bgBlogBundle:Blog:voir, format: html }
+    requirements:
+        id: \d+
+d2bgblog_modifier:
+    pattern:    /modifier/{id}
+    defaults:    { _controller: D2bgBlogBundle:Blog:modifier }
+    requirements:
+        id: \d+
+        
+d2bgblog_supprimer:
+    pattern:    /supprimer/{id}
+    defaults:    { _controller: D2bgBlogBundle:Blog:supprimer }
+    requirements:
+        id: \d+
+        
+d2bgblog_ajouter:
+    pattern:    /ajouter
+    defaults:    { _controller: D2bgBlogBundle:Blog:ajouter }
+
+d2bgblog_send:
+    pattern:    /envoimail
+    defaults:    { _controller: D2bgBlogBundle:Blog:envoimail }

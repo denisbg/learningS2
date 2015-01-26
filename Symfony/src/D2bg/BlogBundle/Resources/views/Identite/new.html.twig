@@ -1,0 +1,22 @@
+{% extends '::layout.html.twig' %}
+{% block body -%}
+    <h1>Identite creation</h1>
+
+  
+ {{ form(form) }} 
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('identite') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{# On charge la bibliothèque jQuery. Ici, je la prends depuis le site
+jquery.com,
+<br>
+mais si vous l'avez en local, changez simplement l'adresse. #}
+<br>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+{% endblock %}
+

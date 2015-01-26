@@ -1,0 +1,15 @@
+dbg_blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DbgBlogBundle:Default:index }
+dbg_blog_HelloDenis:
+    pattern:  /salut/{name}
+    defaults: { _controller: DbgBlogBundle:Blog:index }
+dbg_blog_ByebyeDenis:
+    path:  /byebye/{name}
+    defaults: { _controller: DbgBlogBundle:Blog:byebye }
+dbg_blog_ArchiveDenis:
+    path:  /blog/{annee}/{mois}.{name}
+    defaults: { _controller: DbgBlogBundle:Blog:voirArchive }
+    requirements: 
+        annee: \d{4}
+        format: html|xml

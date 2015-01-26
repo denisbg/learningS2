@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: curriculum
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: d.bouviergarzon@gmail.com
+    mailer_password: gGoogle31
+    locale: en
+    secret: a6c89e893d51d8e8178efd98968af0ac9cd46d08

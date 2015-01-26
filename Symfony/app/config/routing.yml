@@ -1,0 +1,13 @@
+d2bg_blog:
+  resource: '@D2bgBlogBundle/Resources/config/routing.yml'
+  prefix: /blog
+dbg_blog:
+  resource: '@DbgBlogBundle/Resources/config/routing.yml'
+  prefix: /
+dbg_prospect:
+  resource: '@DbgProspectBundle/Resources/config/routing.yml'
+  prefix: /
+D2bgBlogBundle:
+  resource: '@D2bgBlogBundle/Controller/'
+  type: annotation
+  prefix: /blog

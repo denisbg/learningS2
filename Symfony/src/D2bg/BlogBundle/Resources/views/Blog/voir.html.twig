@@ -1,0 +1,55 @@
+{% extends "D2bgBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+{% block devskills_body %}
+{%  if article.image is not null %}
+<img src="{{ article.image.url }}" alt="{{article.image.alt}}" />
+{% endif %}
+
+<h2>{{ article.titre }}</h2>
+<i> Par {{article.auteur }} </i>
+<div class = "well"> 
+  {{ article.contenu }}
+</div>
+<div class = "well"> 
+  <h3>Commentaires:</h3>
+  {% for commentaire in  liste_commentaires %}
+  
+  <div class="bg-info">
+  <i> Par {{commentaire.auteur}}</i><br>
+  {{ commentaire.contenu}}
+  </div>
+  
+  {% endfor %}
+
+</div>
+{% if liste_articlecompetences|length > 0 %}
+<div class = "well"> 
+  <h3>Competences:</h3>
+  {% for articleCompetence in  liste_articlecompetences %}
+  
+  <div class="bg-info">
+  <ul>
+  {{ articleCompetence.competence.contenu}}
+  {{ articleCompetence.niveau}}
+  </ul>
+  </div>
+  
+  {% endfor %}
+
+</div>
+{% endif %}
+
+
+
+<p>
+  <a href="{{ path('d2bgblog_accueil') }}" class = "btn"> <i class="icon-chevron-left"></i>
+  Retour la liste </a>
+  <a href="{{ path('d2bgblog_modifier', {'id':article.id}) }}" class = "btn"> <i class="icon-edit"></i>
+  Modifier l'article </a>
+  <a href="{{ path('d2bgblog_supprimer', {'id':article.id}) }}" class = "btn"> <i class="icon-trash"></i>
+  supprimer l'article </a>
+</p>
+{% endblock %}

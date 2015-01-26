@@ -1,0 +1,17 @@
+{% extends "D2bgBlogBundle::layout.html.twig" %}
+
+ 
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+
+{% block devskills_body %}
+ {% include "D2bgBlogBundle:Blog:formulaire.html.twig" %}
+
+<p>
+  <a href="{{ path('d2bgblog_accueil') }}" class = "btn"> <i class="icon-chevron-left"></i>
+  Retour liste </a>
+  
+            
+</p>
+{% endblock %}

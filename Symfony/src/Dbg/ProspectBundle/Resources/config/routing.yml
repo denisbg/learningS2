@@ -1,0 +1,22 @@
+dbgprospect_help:
+    pattern:  /prospect/help
+    defaults: { _controller: DbgProspectBundle:Prospect:help }
+dbgprospect_menu:
+    pattern:  /prospect/menu
+    defaults: { _controller: DbgProspectBundle:Prospect:menu }
+dbgprospect_ajouter:
+    pattern:  /prospect/ajouter
+    defaults: { _controller: DbgProspectBundle:Prospect:ajouter }
+dbgprospect_accueil:
+    pattern:  /prospect/{page}
+    defaults: { _controller: DbgProspectBundle:Prospect:index, page: 1 }
+dbgprospect_voir:
+    pattern:  /prospect/voir/{id}
+    defaults: { _controller: DbgProspectBundle:Prospect:voir }
+
+dbgprospect_modifier:
+    pattern:  /prospect/modifier/{id}
+    defaults: { _controller: DbgProspectBundle:Prospect:modifier }
+dbgprospect_supprimer:
+    pattern:  /prospect/supprimer/{id}
+    defaults: { _controller: DbgProspectBundle:Prospect:supprimer }

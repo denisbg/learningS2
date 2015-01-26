@@ -1,0 +1,17 @@
+{% extends "DbgProspectBundle::layout.html.twig" %}
+
+ 
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+
+{% block devskills_body %}
+ {% include "DbgProspectBundle:Prospect:formulaire.html.twig" %}
+
+<p>
+  <a href="{{ path('dbgprospect_accueil') }}" class = "btn"> <i class="icon-chevron-left"></i>
+  Retour liste </a>
+  
+			
+</p>
+{% endblock %}

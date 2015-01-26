@@ -1,0 +1,7 @@
+parameters:
+#    dbg_prospect.example.class: Dbg\ProspectBundle\Example
+
+services:
+#    dbg_prospect.example:
+#        class: %dbg_prospect.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

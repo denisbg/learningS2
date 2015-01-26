@@ -1,0 +1,19 @@
+{% extends "DbgProspectBundle::layout.html.twig" %}
+
+ 
+{% block title %}
+    supression d'un article (à terminer)- {{ parent() }}
+{% endblock %}
+ 
+{% block devskills_body %}</pre>
+<h2>{{ article.titre }}</h2>
+<i> Par {{article.auteur }} </i>
+<div class = "well"> 
+  {{ article.contenu }}
+</div>
+<p>
+  <a href="{{ path('dbgprospect_accueil') }}" class = "btn"> <i class="icon-chevron-left"></i>
+  Retour liste </a>
+ 
+</p>
+{% endblock %}
