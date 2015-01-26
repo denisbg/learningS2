@@ -29,7 +29,7 @@ class BlogController extends Controller {
 		// lancer la creation des fixtures
 		return $this->redirect ( $this->generateUrl ( 'd2bgblog_accueil' ) );
 	}
-	public function indexAction($page, $nbpp = 3) {
+	public function indexAction($page=1, $nbpp = 3) {
 		if ($page < 1) {
 			throw $this->createNotFoundException ( "Page inexistante( page = " . $page . ")" );
 		}
@@ -46,7 +46,7 @@ class BlogController extends Controller {
 		$em = $this->getDoctrine ()->getManager ();
 		$article = $em->getRepository ( 'D2bgBlogBundle:Article' )->find ( $id );
 		$liste_commentaires = // $article->getCommentaires();
-$this->_em->getRepository ( 'D2bgBlogBundle:Commentaire' )->findByArticle ( $article->getId () );
+        $em->getRepository ( 'D2bgBlogBundle:Commentaire' )->findByArticle ( $article->getId () );
 		
 		$liste_articlecompetences = $em->getRepository ( 'D2bgBlogBundle:ArticleCompetence' )->findByArticle ( $article->getId () );
 		

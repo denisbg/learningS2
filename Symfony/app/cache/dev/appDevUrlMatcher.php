@@ -122,6 +122,32 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // d2bg_user_homepage
+        if (0 === strpos($pathinfo, '/hellouser') && preg_match('#^/hellouser/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'd2bg_user_homepage')), array (  '_controller' => 'D2bg\\UserBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
+            if (0 === strpos($pathinfo, '/login')) {
+                // login
+                if ($pathinfo === '/login') {
+                    return array (  '_controller' => 'D2bg\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                }
+
+                // login_check
+                if ($pathinfo === '/login_check') {
+                    return array (  '_controller' => 'D2bg\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'login_check',);
+                }
+
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array (  '_controller' => 'D2bg\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'logout',);
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/blog')) {
             // d2bgblog_accueil
             if (preg_match('#^/blog(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {

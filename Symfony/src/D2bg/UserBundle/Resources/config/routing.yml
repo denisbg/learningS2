@@ -1,0 +1,16 @@
+d2bg_user_homepage:
+    path:     /hellouser/{name}
+    defaults: { _controller: D2bgUserBundle:Default:index }
+    
+login :
+  path : /login
+  defaults: { _controller: D2bgUserBundle:Security:login }
+       
+login_check:
+  path : /login_check
+  defaults: { _controller: D2bgUserBundle:Default:index }
+  
+logout:
+  path: /logout
+  defaults: { _controller: D2bgUserBundle:Default:index }
+    

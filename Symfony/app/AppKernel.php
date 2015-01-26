@@ -19,8 +19,8 @@ class AppKernel extends Kernel
             new Dbg\BlogBundle\DbgBlogBundle(),
             new Dbg\ProspectBundle\DbgProspectBundle(),
             new D2bg\BlogBundle\D2bgBlogBundle(),
-      
-        );
+            new D2bg\UserBundle\D2bgUserBundle(),
+               );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
  

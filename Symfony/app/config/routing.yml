@@ -1,3 +1,8 @@
+d2bg_user:
+    resource: "@D2bgUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
 d2bg_blog:
   resource: '@D2bgBlogBundle/Resources/config/routing.yml'
   prefix: /blog
